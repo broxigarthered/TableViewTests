@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,110 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TableViewTests" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ldu-hJ-hTg">
+                                <rect key="frame" x="125" y="78" width="125" height="30"/>
+                                <state key="normal" title="Mobile Dashboard"/>
+                                <connections>
+                                    <action selector="showMobileDashboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TUI-QO-jSU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zc0-On-rEn">
+                                <rect key="frame" x="123.5" y="146" width="128" height="30"/>
+                                <state key="normal" title="Current Bill Details"/>
+                                <connections>
+                                    <action selector="showCurrentBillDashboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dx8-wQ-aEt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H46-nY-8O3">
+                                <rect key="frame" x="125" y="214" width="125" height="30"/>
+                                <state key="normal" title="Hybrid Dashboard"/>
+                                <connections>
+                                    <action selector="showHybridDashboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rwx-er-lFu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhy-6T-FGk">
+                                <rect key="frame" x="123" y="282" width="129" height="30"/>
+                                <state key="normal" title="NetBox Dashboard"/>
+                                <connections>
+                                    <action selector="showNetBoxDashboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="msZ-5O-vDO"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dhy-6T-FGk" firstAttribute="top" secondItem="H46-nY-8O3" secondAttribute="bottom" constant="38" id="1wo-Lj-tJO"/>
+                            <constraint firstItem="Zc0-On-rEn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="580-Gr-HvF"/>
+                            <constraint firstItem="dhy-6T-FGk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Sz4-bj-Enu"/>
+                            <constraint firstItem="H46-nY-8O3" firstAttribute="top" secondItem="Zc0-On-rEn" secondAttribute="bottom" constant="38" id="YEL-Y0-JjP"/>
+                            <constraint firstItem="Ldu-hJ-hTg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="58" id="gsf-KV-2hO"/>
+                            <constraint firstItem="H46-nY-8O3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nDf-nT-Qow"/>
+                            <constraint firstItem="Zc0-On-rEn" firstAttribute="top" secondItem="Ldu-hJ-hTg" secondAttribute="bottom" constant="38" id="rIj-4u-PfB"/>
+                            <constraint firstItem="Ldu-hJ-hTg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="z48-yV-G1Y"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="86D-9Q-FVb" kind="show" identifier="showTableView" id="5if-n9-kLj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+        <!--Reusable Table View Controller-->
+        <scene sceneID="U2r-FE-W4B">
+            <objects>
+                <viewController id="86D-9Q-FVb" customClass="ReusableTableViewController" customModule="TableViewTests" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UHA-0z-tmE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wPs-YN-h9G">
+                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="563" id="Qst-Q0-98X"/>
+                                    <constraint firstAttribute="width" constant="375" id="VAp-Nv-XYZ"/>
+                                </constraints>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Controller Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvr-MX-38d">
+                                <rect key="frame" x="125" y="45" width="125" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3I-rq-piA">
+                                <rect key="frame" x="313" y="41" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="unwind:" destination="86D-9Q-FVb" eventType="touchUpInside" id="7Rp-Oi-YTM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hvr-MX-38d" firstAttribute="top" secondItem="6jH-lb-SiV" secondAttribute="top" constant="25" id="RIO-ex-Ili"/>
+                            <constraint firstItem="6jH-lb-SiV" firstAttribute="trailing" secondItem="d3I-rq-piA" secondAttribute="trailing" constant="16" id="Wid-b7-Igk"/>
+                            <constraint firstItem="wPs-YN-h9G" firstAttribute="leading" secondItem="UHA-0z-tmE" secondAttribute="leading" id="Zwh-w8-Di2"/>
+                            <constraint firstItem="wPs-YN-h9G" firstAttribute="top" secondItem="6jH-lb-SiV" secondAttribute="top" constant="84" id="fxk-Pl-Zij"/>
+                            <constraint firstItem="hvr-MX-38d" firstAttribute="centerX" secondItem="6jH-lb-SiV" secondAttribute="centerX" id="gqS-lw-iUI"/>
+                            <constraint firstItem="d3I-rq-piA" firstAttribute="top" secondItem="6jH-lb-SiV" secondAttribute="top" constant="21" id="pZ4-fQ-aY8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6jH-lb-SiV"/>
+                    </view>
+                    <connections>
+                        <outlet property="controllerName" destination="hvr-MX-38d" id="n0V-HZ-on4"/>
+                        <outlet property="reusableTableView" destination="wPs-YN-h9G" id="klc-Fo-ftC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x2U-BN-GP3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="981.60000000000002" y="134.48275862068968"/>
         </scene>
     </scenes>
 </document>
